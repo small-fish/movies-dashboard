@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description" content="Movies dashboard" />
+  <meta charset="utf-8">
+  <title>Movies dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+
+<body>
+  
+  <div class="container">
+    {% if ratings_list %}
+        <ul>
+        {% for rating in ratings_list %}
+            <li>{{ rating.rating }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+  </div>
+
+
+<script src="dist/index.js"></script>
+
+</body>
+</html>
