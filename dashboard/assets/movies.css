@@ -1,0 +1,24 @@
+/* list of movies */
+.movies {
+    display: flex;
+    flex-direction: column;
+}
+
+.movies__list {
+    height: 0;
+    visibility: hidden;
+}
+
+.movies__list.is-active {
+    height: auto;
+    visibility: visible;
+}
+
+.movie {
+    padding: 5px 0;
+    border-bottom: 1px solid var(--color-3);
+}
+
+.movie__rating strong {
+    font-weight: 400;
+}

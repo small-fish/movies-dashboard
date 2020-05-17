@@ -1,1 +1,6 @@
 movies/lib/
+*/**/__pycache__/
+bin/
+lib/
+node_modules/
+pyvenv.cfg

@@ -1,0 +1,41 @@
+/* define the color theme */
+
+:root {
+    --color-1: #FDF2C5;
+    --color-2: #EFE8B2;
+    --color-3: #C6D1A6;
+    --color-4: #82BFA0;
+    --color-5: #7A6F5D;
+    --color-6: #575757;
+    --color-7: #f4f4f4;
+}
+
+/* main part */
+html{
+  margin:0;
+  padding:0;
+  max-height:100vh;
+}
+
+body {
+  background: rgba(1, 1, 1, 0);
+  height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-6);
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    text-size-adjust: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}

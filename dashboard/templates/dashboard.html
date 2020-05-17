@@ -1,0 +1,52 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static "main.css" %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% if movies_sorted %}
+        <div class="ratingbar">
+            {% for movies_list in movies_sorted %}
+                <a class="ratingbar__item" data-rating="{{ forloop.counter }}">
+                    <span class="ratingbar__grade">
+                        {{ forloop.counter }}
+                        <span class="ratingbar__star"></span>
+                    </span>
+                    <span class="ratingbar__line">
+                        <span class="ratingbar__line--colored" 
+                            data-count="{{ movies_list.count }}"
+                            data-total="{{ movies_total }}"></span>
+                    </span>
+                    <span class="ratingbar__count">{{ movies_list.count }}</span>
+                </a>
+            {% endfor %}    
+        </div>
+
+        <div class="movies">
+            {% for movies_list in movies_sorted %}
+                <div class="movies__list" data-rating="{{ forloop.counter }}">
+                    {% for movie in movies_list %}
+                        <div class="movie">
+                            {{ movie.title }}
+                            <div class="movie__rating">
+                                Average rating: 
+                                <strong>{{ movie.avg_rating|floatformat }}</strong>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h2>Something went wrong :(</h2>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static "index.js" %}"></script>
+{% endblock %}
