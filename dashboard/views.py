@@ -1,12 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.db.models import Q, Avg
+from django.db.models import Avg
 import json
-from django.core import serializers
-from django.core.serializers.json import DjangoJSONEncoder
 
 from .models import Ratings, Movies, Tags, Links;
-
 
 def index(request):
     movies_list = Movies.objects.all()
@@ -27,11 +24,8 @@ def index(request):
         movies_rating_5
     ]
 
-    pageData =  json.dumps(list(movies_rating_5), cls=DjangoJSONEncoder)
-
     context = {
         'movies_total': movies_total,
-        'pageData': pageData,
         'movies_sorted': movies_sorted,
         }
 
